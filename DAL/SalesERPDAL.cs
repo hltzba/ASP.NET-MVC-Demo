@@ -9,6 +9,9 @@ namespace DAL
 {
     public class SalesERPDAL : DbContext
     {
+        //使用下面构造函数可以自由定义连接
+        //public SalesERPDAL():base("ConnctionString或者ConnctName")
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Employee>().ToTable("T_Employee");

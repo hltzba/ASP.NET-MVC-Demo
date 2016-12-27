@@ -13,7 +13,23 @@ namespace MVCDemo.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            List<Employee> employees = EmployeesDAL.GetAllEmployees();
+            EmployeeListViewModel listviewmodel = new EmployeeListViewModel();
+            listviewmodel.LoginName = "Admin";
+            listviewmodel.Employees = new List<EmployeeViewModel>();
+            foreach (Employee e in employees)
+            {
+                EmployeeViewModel item = new EmployeeViewModel();
+                item.FirstName = e.FirstName;
+                item.LastName = e.LastName;
+                item.Salary = e.Salary;
+                listviewmodel.Employees.Add(item);
+            }
+
+            //   ViewData["Employee"] = model;
+            // ViewBag.Employee = model;
+
+            return View(listviewmodel);
         }
 
         public ActionResult About()
