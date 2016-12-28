@@ -23,7 +23,7 @@ namespace DAL.BussinessLayer
             using (SalesERPDAL db = new SalesERPDAL())
             {
                 Expression<Func<Employee, bool>> where = PredicateExtensionses.True<Employee>();
-                where.And(it => it.Id == id);
+                where=where.And(it => it.Id == id);
                 return db.Employee.Where(where).FirstOrDefault();
             }
         }

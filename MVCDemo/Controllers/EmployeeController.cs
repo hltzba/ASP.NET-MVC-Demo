@@ -15,6 +15,7 @@ namespace MVCDemo.Controllers
         public ActionResult Index()
         {
             List<Employee> employees = EmployeesDAL.GetAllEmployees();
+            //Employee tmp=EmployeesDAL.GetEmployee(2);
             EmployeeListViewModel listviewmodel = new EmployeeListViewModel();
             listviewmodel.LoginName = "Admin";
             listviewmodel.Employees = new List<EmployeeViewModel>();
