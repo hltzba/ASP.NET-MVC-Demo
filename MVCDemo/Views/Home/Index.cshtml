@@ -6,18 +6,5 @@
 }
 
 <div>
-    Hello @Model.LoginName:<br />
-    <div>
-        <table>
-            <tr><th>FirstName</th><th>LastName</th><th>Salary</th></tr>
-            @foreach (EmployeeViewModel item in Model.Employees)
-            {
-                <tr>
-                    <td>@item.FirstName</td>
-                    <td>@item.LastName</td>
-                    <td style="background-color:@item.SalaryColor">@item.Salary.ToString("C")</td>
-                </tr>
-            }
-        </table>
-    </div>
-    </div>
+    Hello，这是一个教学程序
+</div>

@@ -1,7 +1,22 @@
-﻿
+﻿@using MVCDemo.Models
+@model EmployeeListViewModel
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
+<div>
+    Hello @Model.LoginName:<br />
+    <div>
+        <table>
+            <tr><th>FirstName</th><th>LastName</th><th>Salary</th></tr>
+            @foreach (EmployeeViewModel item in Model.Employees)
+            {
+                <tr>
+                    <td>@item.FirstName</td>
+                    <td>@item.LastName</td>
+                    <td style="background-color:@item.SalaryColor">@item.Salary.ToString("C")</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
