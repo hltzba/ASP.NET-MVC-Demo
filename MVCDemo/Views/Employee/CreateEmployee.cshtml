@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "CreateEmployee";
+}
+
+<h2>Create Employee</h2>
+
+<div>
+    <form action="/Employee/SaveEmployee" method="post">
+        First Name:<input type="text" name="txtFirstName" value="" placeholder="Type first name." /><br />
+        Last Name:<input type="text" name="txtLastName" value="" placeholder="Type last name." /><br />
+        Salary:<input type="number" name="txtSalary" value="" placeholder="Type salary name." /><br />
+        <input type="submit" name="btnSubmit" value="Save Employee" class="btn btn-primary" />
+        <input type="button" name="btnReset" value="Reset" class="btn btn-info" onclick="ResetForm()" />
+    </form>
+</div>
+<script>
+    function ResetForm() {
+        $(":text").val("");
+        $(":number").val("");
+    }
+</script>

@@ -16,7 +16,7 @@ namespace MVCDemo.Controllers
         {
             List<Employee> employees = EmployeesDAL.GetAllEmployees();
             EmployeeListViewModel listviewmodel = new EmployeeListViewModel();
-            listviewmodel.LoginName = "Admin";
+
             listviewmodel.Employees = new List<EmployeeViewModel>();
             foreach (Employee e in employees)
             {
@@ -31,6 +31,16 @@ namespace MVCDemo.Controllers
             // ViewBag.Employee = model;
 
             return View(listviewmodel);
+        }
+
+        public ActionResult AddNew()
+        {
+            return View("CreateEmployee");
+        }
+
+        public string SaveEmployee(Employee e)
+        {
+            return e.FirstName + "|" + e.LastName + "|" + e.Salary;
         }
     }
 }
