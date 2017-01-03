@@ -1,6 +1,8 @@
-﻿using System;
+﻿using DAL.Util;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,7 +14,17 @@ namespace DAL.BussinessLayer
         {
             using (SalesERPDAL db = new SalesERPDAL())
             {
-                return db.Employees.ToList();
+                return db.Employee.ToList();
+            }
+        }
+
+        public static Employee GetEmployee(int id)
+        {
+            using (SalesERPDAL db = new SalesERPDAL())
+            {
+                Expression<Func<Employee, bool>> where = PredicateExtensionses.True<Employee>();
+                where=where.And(it => it.Id == id);
+                return db.Employee.Where(where).FirstOrDefault();
             }
         }
     }
