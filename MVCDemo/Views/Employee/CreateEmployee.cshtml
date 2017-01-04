@@ -6,9 +6,9 @@
 
 <div>
     <form action="/Employee/SaveEmployee" method="post">
-        First Name:<input type="text" name="txtFirstName" value="" placeholder="Type first name." /><br />
-        Last Name:<input type="text" name="txtLastName" value="" placeholder="Type last name." /><br />
-        Salary:<input type="number" name="txtSalary" value="" placeholder="Type salary name." /><br />
+        First Name:<input type="text" name="FirstName" value="" placeholder="Type first name." /><br />
+        Last Name:<input type="text" name="LastName" value="" placeholder="Type last name." /><br />
+        Salary:<input type="number" id="Salary" name="Salary" value="" placeholder="Type salary name." /><br />
         <input type="submit" name="btnSubmit" value="Save Employee" class="btn btn-primary" />
         <input type="button" name="btnReset" value="Reset" class="btn btn-info" onclick="ResetForm()" />
     </form>
@@ -16,6 +16,6 @@
 <script>
     function ResetForm() {
         $(":text").val("");
-        $(":number").val("");
+        $("#Salary").val(0);
     }
 </script>
