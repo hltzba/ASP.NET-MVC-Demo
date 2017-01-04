@@ -4,18 +4,29 @@
 
 <h2>Create Employee</h2>
 
+<style type="text/css">
+    input {
+        margin: 2px;
+        padding: 2px;
+    }
+</style>
 <div>
-    <form action="/Employee/SaveEmployee" method="post">
+    <form action="/Employee/SaveEmployee" method="post" style="margin:10px">
         First Name:<input type="text" name="FirstName" value="" placeholder="Type first name." /><br />
         Last Name:<input type="text" name="LastName" value="" placeholder="Type last name." /><br />
         Salary:<input type="number" id="Salary" name="Salary" value="" placeholder="Type salary name." /><br />
         <input type="submit" name="btnSubmit" value="Save Employee" class="btn btn-primary" />
         <input type="button" name="btnReset" value="Reset" class="btn btn-info" onclick="ResetForm()" />
+        <input type="button" name="btnCancel" value="Cancel" class="btn btn-default" onclick="RedirectIndex()" />
     </form>
 </div>
 <script>
     function ResetForm() {
         $(":text").val("");
-        $("#Salary").val(0);
+        $("#Salary").val(null);
+    }
+
+    function RedirectIndex() {
+        location.href = "/Employee/Index";
     }
 </script>

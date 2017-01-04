@@ -39,9 +39,11 @@ namespace MVCDemo.Controllers
             return View("CreateEmployee");
         }
 
-        public string SaveEmployee(Employee e)
+        public ActionResult SaveEmployee(Employee e)
         {
-            return e.FirstName + "|" + e.LastName + "|" + e.Salary;
+            EmployeesDAL.SaveEmployee(e);
+            return RedirectToAction("Index");
+            //return e.FirstName + "|" + e.LastName + "|" + e.Salary;
         }
     }
 }
