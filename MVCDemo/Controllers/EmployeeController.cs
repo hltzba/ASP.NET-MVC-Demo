@@ -22,6 +22,8 @@ namespace MVCDemo.Controllers
             foreach (Employee e in employees)
             {
                 EmployeeViewModel item = new EmployeeViewModel();
+                item.JobNumber = e.JobNumber;
+                item.Email = e.Email;
                 item.FirstName = e.FirstName;
                 item.LastName = e.LastName;
                 item.Salary = e.Salary;
@@ -41,8 +43,15 @@ namespace MVCDemo.Controllers
 
         public ActionResult SaveEmployee(Employee e)
         {
-            EmployeesDAL.SaveEmployee(e);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                EmployeesDAL.SaveEmployee(e);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View("CreateEmployee");
+            }
             //return e.FirstName + "|" + e.LastName + "|" + e.Salary;
         }
     }

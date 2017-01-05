@@ -6,13 +6,15 @@
 
 <div>
     <a href="/Employee/AddNew">Add New</a>
-    <table>
-        <tr><th>FirstName</th><th>LastName</th><th>Salary</th></tr>
+    <table class="table table-hover">
+        <tr><th>JobNumber</th><th>FirstName</th><th>LastName</th><th>Email</th><th>Salary</th></tr>
         @foreach (EmployeeViewModel item in Model.Employees)
-            {
+        {
             <tr>
+                <td>@item.JobNumber</td>
                 <td>@item.FirstName</td>
                 <td>@item.LastName</td>
+                <td>@item.Email</td>
                 <td style="background-color:@item.SalaryColor">@item.Salary.ToString("C")</td>
             </tr>
         }

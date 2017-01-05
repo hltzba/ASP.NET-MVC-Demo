@@ -9,12 +9,23 @@
         margin: 2px;
         padding: 2px;
     }
+
+    .required .errormessage {
+        color: red;
+    }
 </style>
 <div>
     <form action="/Employee/SaveEmployee" method="post" style="margin:10px">
-        First Name:<input type="text" name="FirstName" value="" placeholder="Type first name." /><br />
-        Last Name:<input type="text" name="LastName" value="" placeholder="Type last name." /><br />
-        Salary:<input type="number" id="Salary" name="Salary" value="" placeholder="Type salary name." /><br />
+        Job number:<input type="text" name="JobNumber" value="" placeholder="Type Job number." />
+        <span class="required">*@Html.ValidationMessage("JobNumber")</span><br />
+        First Name:<input type="text" name="FirstName" value="" placeholder="Type first name." />
+        <span class="required">*@Html.ValidationMessage("FirstName")</span><br />
+        Last Name:<input type="text" name="LastName" value="" placeholder="Type last name." />
+        <span class="required">*@Html.ValidationMessage("LastName")</span><br />
+        E-mail:<input type="text" name="Email" value="" placeholder="Type last E-mail." />
+        <span class="required">*@Html.ValidationMessage("Email")</span><br />
+        Salary:<input type="number" id="Salary" name="Salary" value="" placeholder="Type salary name." />
+        <span class="required">*@Html.ValidationMessage("Salary")</span><br />
         <input type="submit" name="btnSubmit" value="Save Employee" class="btn btn-primary" />
         <input type="button" name="btnReset" value="Reset" class="btn btn-info" onclick="ResetForm()" />
         <input type="button" name="btnCancel" value="Cancel" class="btn btn-default" onclick="RedirectIndex()" />

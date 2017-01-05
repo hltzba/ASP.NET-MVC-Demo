@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Util", "Util\Util.csproj", "{FDE56D2E-0F18-46AD-996F-DF5A8F1C5CFD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomValidations", "CustomValidations\CustomValidations.csproj", "{9FB34D38-FD32-4D44-B5FD-36AF825728BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{FDE56D2E-0F18-46AD-996F-DF5A8F1C5CFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDE56D2E-0F18-46AD-996F-DF5A8F1C5CFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDE56D2E-0F18-46AD-996F-DF5A8F1C5CFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FB34D38-FD32-4D44-B5FD-36AF825728BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FB34D38-FD32-4D44-B5FD-36AF825728BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FB34D38-FD32-4D44-B5FD-36AF825728BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FB34D38-FD32-4D44-B5FD-36AF825728BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
