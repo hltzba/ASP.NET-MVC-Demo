@@ -38,7 +38,7 @@ namespace MVCDemo.Controllers
 
         public ActionResult AddNew()
         {
-            return View("CreateEmployee");
+            return View("CreateEmployee",new CreateEmployeeViewModel());
         }
 
         public ActionResult SaveEmployee(Employee e)
@@ -50,7 +50,13 @@ namespace MVCDemo.Controllers
             }
             else
             {
-                return View("CreateEmployee");
+                CreateEmployeeViewModel model = new CreateEmployeeViewModel();
+                model.JobNumber = e.JobNumber;
+                model.FirstName = e.FirstName;
+                model.LastName = e.LastName;
+                model.Email = e.Email;
+                model.Salary = e.Salary;
+                return View("CreateEmployee",model);
             }
             //return e.FirstName + "|" + e.LastName + "|" + e.Salary;
         }
