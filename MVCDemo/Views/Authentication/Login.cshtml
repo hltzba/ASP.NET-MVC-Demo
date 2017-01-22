@@ -1,0 +1,22 @@
+﻿@using MVCDemo.Models
+@model UserDetailsViewModel
+@{
+    ViewBag.Title = "Login";
+}
+
+
+<h2>Login</h2>
+@Html.ValidationMessage("CredentialError",new { style="color:red;"})
+@using (Html.BeginForm("DoLogin", "Authentication", FormMethod.Post))
+{
+    @Html.LabelFor(it=>it.UserName)
+    @Html.TextBoxFor(it=>it.UserName)
+    @Html.ValidationMessageFor(it=>it.UserName)
+    <br/>
+    @Html.LabelFor(it=>it.Password)
+    @Html.PasswordFor(it=>it.Password)
+    <br/>
+    <input type="submit" name="btnSubmit" value="Login" class="btn btn-primary"/>
+}
+
+

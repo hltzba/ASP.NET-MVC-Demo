@@ -11,7 +11,9 @@ namespace MVCDemo.Controllers
 {
     public class EmployeeController : Controller
     {
+        
         // GET: Employee
+        [Authorize]
         public ActionResult Index()
         {
             List<Employee> employees = EmployeesDAL.GetAllEmployees();
