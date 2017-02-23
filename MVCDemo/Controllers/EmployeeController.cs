@@ -1,5 +1,6 @@
 ﻿using DAL;
 using DAL.BussinessLayer;
+using MVCDemo.Filters;
 using MVCDemo.Models;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,6 @@ namespace MVCDemo.Controllers
 {
     public class EmployeeController : Controller
     {
-        
         // GET: Employee
         [Authorize]
         public ActionResult Index()
@@ -38,11 +38,13 @@ namespace MVCDemo.Controllers
             return View(listviewmodel);
         }
 
+        [AdminFilter]
         public ActionResult AddNew()
         {
-            return View("CreateEmployee",new CreateEmployeeViewModel());
+            return View("CreateEmployee", new CreateEmployeeViewModel());
         }
 
+        [AdminFilter]
         public ActionResult SaveEmployee(Employee e)
         {
             if (ModelState.IsValid)
@@ -58,7 +60,7 @@ namespace MVCDemo.Controllers
                 model.LastName = e.LastName;
                 model.Email = e.Email;
                 model.Salary = e.Salary;
-                return View("CreateEmployee",model);
+                return View("CreateEmployee", model);
             }
             //return e.FirstName + "|" + e.LastName + "|" + e.Salary;
         }

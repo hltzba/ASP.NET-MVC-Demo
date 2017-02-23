@@ -16,7 +16,7 @@ namespace MVCDemo.Controllers
             return View();
         }
 
-    [HttpPost]
+        [HttpPost]
         public ActionResult DoLogin(UserDetailsViewModel user)
         {
             if (ModelState.IsValid)
@@ -24,8 +24,14 @@ namespace MVCDemo.Controllers
                 if (user.UserName == "admin" && user.Password == "admin")
                 {
                     FormsAuthentication.SetAuthCookie(user.UserName, false);
+                    Session["IsAdmin"] = true;
                     return RedirectToAction("Index", "Employee");
-
+                }
+                else if (user.UserName == "jimmy" && user.Password == "123")
+                {
+                    FormsAuthentication.SetAuthCookie(user.UserName, false);
+                    Session["IsAdmin"] = false;
+                    return RedirectToAction("Index", "Employee");
                 }
                 else
                 {
