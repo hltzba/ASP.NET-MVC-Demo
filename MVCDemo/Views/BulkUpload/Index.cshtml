@@ -1,0 +1,10 @@
+﻿@using MVCDemo.Models
+@model FileUploadViewModel
+@{ ViewBag.Title = "Bulk Upload";}
+<div>
+    <a href="/Employee/Index">Back</a>
+    <form action="/BulkUpload/Upload" method="post" enctype="multipart/form-data">
+        Select file:<input type="file" name="fileUpload" value="" />
+        <input type="submit" name="name" value="Upload" />
+    </form>
+</div>

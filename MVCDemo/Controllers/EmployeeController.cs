@@ -64,5 +64,17 @@ namespace MVCDemo.Controllers
             }
             //return e.FirstName + "|" + e.LastName + "|" + e.Salary;
         }
+
+        public ActionResult GetAddNewLink()
+        {
+            if (Convert.ToBoolean(Session["IsAdmin"]))
+            {
+                return PartialView("AddNewLink");
+            }
+            else
+            {
+                return new EmptyResult();
+            }
+        }
     }
 }

@@ -7,9 +7,12 @@
 <div>
     <div>
         <span style="text-align:right">Hello,@User.Identity.Name   <a href="/Authentication/Logout">Logout</a></span>
-        </div>
-    <br/>
-    <a href="/Employee/AddNew">Add New</a>
+    </div>
+    <br />
+    @*<a href="/Employee/AddNew">Add New</a>*@
+    @{
+        Html.RenderAction("GetAddNewLink");
+    }
     <table class="table table-hover">
         <tr><th>JobNumber</th><th>FirstName</th><th>LastName</th><th>Email</th><th>Salary</th></tr>
         @foreach (EmployeeViewModel item in Model.Employees)

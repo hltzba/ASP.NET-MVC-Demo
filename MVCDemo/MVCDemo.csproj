@@ -161,6 +161,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AuthenticationController.cs" />
+    <Compile Include="Controllers\BulkUploadController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Filters\AdminFilter.cs" />
@@ -171,6 +172,7 @@
     <Compile Include="Models\EmployeeListViewModel.cs" />
     <Compile Include="Models\EmployeeViewModel.cs" />
     <Compile Include="Models\Enums\UserStatus.cs" />
+    <Compile Include="Models\FileUploadViewModel.cs" />
     <Compile Include="Models\FooterViewModel.cs" />
     <Compile Include="Models\UserDetailsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -217,6 +219,8 @@
     <Content Include="Views\Employee\CreateEmployee.cshtml" />
     <Content Include="Views\Authentication\Login.cshtml" />
     <Content Include="Views\Shared\Footer.cshtml" />
+    <Content Include="Views\BulkUpload\Index.cshtml" />
+    <Content Include="Views\Employee\AddNewLink.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

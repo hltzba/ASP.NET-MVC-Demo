@@ -36,5 +36,14 @@ namespace DAL.BussinessLayer
                 db.SaveChanges();
             }
         }
+
+        public static void SaveEmployeeList(List<Employee> source)
+        {
+            using (SalesERPDAL db = new SalesERPDAL())
+            {
+                db.Employee.AddRange(source);
+                db.SaveChanges();
+            }
+        }
     }
 }
