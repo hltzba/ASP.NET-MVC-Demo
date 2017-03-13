@@ -33,6 +33,7 @@ namespace MVCDemo.Controllers
             List<Employee> result = new List<Employee>();
             StreamReader csvreader = new StreamReader(model.fileUpload.InputStream);
             csvreader.ReadLine();
+            int index = 1;
             while (!csvreader.EndOfStream)
             {
                 var line = csvreader.ReadLine();
@@ -41,6 +42,7 @@ namespace MVCDemo.Controllers
                 e.FirstName = values[0];
                 e.LastName = values[1];
                 e.Salary = int.Parse(values[2]);
+                e.JobNumber = "E00" + index++;
                 result.Add(e);
             }
             return result;

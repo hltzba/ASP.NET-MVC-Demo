@@ -41,8 +41,15 @@ namespace DAL.BussinessLayer
         {
             using (SalesERPDAL db = new SalesERPDAL())
             {
-                db.Employee.AddRange(source);
-                db.SaveChanges();
+                try
+                {
+                    db.Employee.AddRange(source);
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
             }
         }
     }
