@@ -6,12 +6,13 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
 namespace MVCDemo.Controllers
 {
-    public class BulkUploadController : Controller
+    public class BulkUploadController : AsyncController
     {
         // GET: BulkUpload
         [AdminFilter]
@@ -21,9 +22,9 @@ namespace MVCDemo.Controllers
         }
 
         [AdminFilter]
-        public ActionResult Upload(FileUploadViewModel model)
+        public async Task<ActionResult> Upload(FileUploadViewModel model)
         {
-            List<Employee> employees = GetEmployees(model);
+            List<Employee> employees = await Task.Factory.StartNew<List<Employee>>(() => GetEmployees(model));
             EmployeesDAL.SaveEmployeeList(employees);
             return RedirectToAction("Index", "Employee");
         }
