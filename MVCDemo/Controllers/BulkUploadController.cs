@@ -22,6 +22,7 @@ namespace MVCDemo.Controllers
         }
 
         [AdminFilter]
+        [HandleError]
         public async Task<ActionResult> Upload(FileUploadViewModel model)
         {
             List<Employee> employees = await Task.Factory.StartNew<List<Employee>>(() => GetEmployees(model));
