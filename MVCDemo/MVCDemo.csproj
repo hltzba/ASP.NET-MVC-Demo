@@ -160,6 +160,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\SPA\SPAAreaRegistration.cs" />
     <Compile Include="Controllers\AuthenticationController.cs" />
     <Compile Include="Controllers\BulkUploadController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
@@ -188,6 +189,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\SPA\Views\web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -226,6 +228,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\SPA\Controllers\" />
+    <Folder Include="Areas\SPA\Models\" />
+    <Folder Include="Areas\SPA\Views\Shared\" />
     <Folder Include="Views\Error\" />
   </ItemGroup>
   <ItemGroup>
@@ -240,6 +245,10 @@
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{fa45c4e6-8bba-4011-ab81-830f086661ca}</Project>
       <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Util\Util.csproj">
+      <Project>{fde56d2e-0f18-46ad-996f-df5a8f1c5cfd}</Project>
+      <Name>Util</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
