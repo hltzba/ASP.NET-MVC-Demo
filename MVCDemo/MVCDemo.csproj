@@ -171,13 +171,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\CreateEmployeeViewModel.cs" />
-    <Compile Include="Models\EmployeeListViewModel.cs" />
-    <Compile Include="Models\EmployeeViewModel.cs" />
     <Compile Include="Models\Enums\UserStatus.cs" />
-    <Compile Include="Models\FileUploadViewModel.cs" />
-    <Compile Include="Models\FooterViewModel.cs" />
-    <Compile Include="Models\UserDetailsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -249,6 +243,10 @@
     <ProjectReference Include="..\Util\Util.csproj">
       <Project>{fde56d2e-0f18-46ad-996f-df5a8f1c5cfd}</Project>
       <Name>Util</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewModel\ViewModel.csproj">
+      <Project>{68ce6ede-1eae-4442-861a-cb389fcc3924}</Project>
+      <Name>ViewModel</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
