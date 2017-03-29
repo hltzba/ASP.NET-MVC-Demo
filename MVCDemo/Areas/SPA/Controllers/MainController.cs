@@ -29,15 +29,16 @@ namespace MVCDemo.Areas.SPA.Controllers
                 {
                     model.SalaryColor = "yellow";
                 }
+                resultModels.Add(model);
             }
-            return View();
+            return View(resultModels);
         }
 
         public ActionResult GetAddNewLink()
         {
             if (Convert.ToBoolean(Session["IsAdmin"]))
             {
-                return PartialView("GetAddNewLink");
+                return PartialView("AddNewLink");
             }
             else
             {
