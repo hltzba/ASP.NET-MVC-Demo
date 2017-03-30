@@ -15,4 +15,16 @@
             <td><input type="text" id="txtFirstName" name="FirstName" value="@Model.Salary" placeholder="Type salary." /></td>
         </tr>
     </table>
+    <input type="submit" name="btnSubmit" value="Save Employee" class="btn btn-primary" onclick="IsValid()" />
+    <input type="button" name="btnReset" value="Reset" class="btn btn-info" onclick="ResetForm()" />
+    <input type="button" name="btnCancel" value="Cancel" class="btn btn-default" onclick="CancelSave()" />
 </div>
+<script type="text/javascript">
+    function ResetForm() {
+        $(":text").val("");
+    }
+
+    function CancelSave() {
+        $("#DivCreateEmployee").dialog("close");
+    }
+</script>

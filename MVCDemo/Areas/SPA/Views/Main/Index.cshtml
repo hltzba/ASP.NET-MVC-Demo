@@ -22,3 +22,18 @@
         </tr>
     }
 </table>
+<script type="text/javascript">
+    function OpenAddNew() {
+        $.get("/SPA/Main/AddNew").then(
+            function (r) {
+                $("<div id='DivCreateEmployee'></div>").html(r).
+                dialog({
+                    width: 'auto', height: 'auto', modal: true, title: 'Create new employee',
+                    close: function () {
+                        $("#DivCreateEmployee").remove();
+                    }
+                });
+            }
+            );
+    }
+</script>
