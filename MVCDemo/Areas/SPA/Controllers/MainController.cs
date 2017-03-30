@@ -1,5 +1,6 @@
 ﻿using DAL;
 using DAL.BussinessLayer;
+using MVCDemo.Filters;
 using MVCDemo.ViewModel.SPA;
 using System;
 using System.Collections.Generic;
@@ -50,6 +51,24 @@ namespace MVCDemo.Areas.SPA.Controllers
         {
             CreateEmployeeViewModel v = new CreateEmployeeViewModel();
             return PartialView("CreateEmployee", v);
+        }
+
+        [AdminFilter]
+        public ActionResult SaveEmployee(Employee e)
+        {
+            EmployeesDAL.SaveEmployee(e);
+            EmployeeViewModel model = new EmployeeViewModel();
+            model.EmployeeName = e.FirstName + " " + e.LastName;
+            model.Salary = e.Salary;
+            if (model.Salary > 2000)
+            {
+                model.SalaryColor = "green";
+            }
+            else
+            {
+                model.SalaryColor = "yellow";
+            }
+            return Json(model);
         }
     }
 }

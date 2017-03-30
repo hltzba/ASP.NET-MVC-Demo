@@ -8,14 +8,14 @@
         </tr>
         <tr>
             <td>Last Name:</td>
-            <td><input type="text" id="txtFirstName" name="FirstName" value="@Model.LastName" placeholder="Type last name." /></td>
+            <td><input type="text" id="txtLastName" name="LastName" value="@Model.LastName" placeholder="Type last name." /></td>
         </tr>
         <tr>
             <td>Salary:</td>
-            <td><input type="text" id="txtFirstName" name="FirstName" value="@Model.Salary" placeholder="Type salary." /></td>
+            <td><input type="text" id="txtSalary" name="Salary" value="@Model.Salary" placeholder="Type salary." /></td>
         </tr>
     </table>
-    <input type="submit" name="btnSubmit" value="Save Employee" class="btn btn-primary" onclick="IsValid()" />
+    <input type="submit" name="btnSubmit" value="Save Employee" class="btn btn-primary" onclick="SaveEmployee()" />
     <input type="button" name="btnReset" value="Reset" class="btn btn-info" onclick="ResetForm()" />
     <input type="button" name="btnCancel" value="Cancel" class="btn btn-default" onclick="CancelSave()" />
 </div>
@@ -27,4 +27,29 @@
     function CancelSave() {
         $("#DivCreateEmployee").dialog("close");
     }
+
+    function SaveEmployee() {
+        if (IsValid()) {
+            var postdata = {
+                FirstName: $("#txtFirstName").val(),
+                LastName: $("#LastName").val(),
+                Salary: $("#Salary").val()
+            };
+            $.post("/SPA/Main/SaveEmployee", postdata).then(
+                function (result) {
+                    var tr = $("<tr></tr>");
+                    var nametd = $("<td></td>");
+                    var salarytd = $("<td></td>");
+                    nametd.text(result.EmployeeName);
+                    salarytd.text(result.Salary);
+                    salarytd.css("background-color", result.SalaryColor);
+                    tr.append(nametd);
+                    tr.append(salarytd);
+                    $("#EmployeeTable").append(tr);
+                    $("#DivCreateEmployee").dialog("close");
+                }
+                );
+        }
+    }
 </script>
+<script type="text/javascript" src="~/Scripts/Validations.js"></script>
