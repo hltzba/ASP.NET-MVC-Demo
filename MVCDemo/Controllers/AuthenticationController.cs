@@ -31,6 +31,7 @@ namespace MVCDemo.Controllers
                 {
                     FormsAuthentication.SetAuthCookie(user.UserName, false);
                     Session["IsAdmin"] = false;
+
                     return RedirectToAction("Index", "Employee");
                 }
                 else

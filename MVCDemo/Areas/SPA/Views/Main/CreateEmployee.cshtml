@@ -25,15 +25,15 @@
     }
 
     function CancelSave() {
-        $("#DivCreateEmployee").dialog("close");
+        $("#DivCreateEmployee").dialog('close');
     }
 
     function SaveEmployee() {
         if (IsValid()) {
             var postdata = {
                 FirstName: $("#txtFirstName").val(),
-                LastName: $("#LastName").val(),
-                Salary: $("#Salary").val()
+                LastName: $("#txtLastName").val(),
+                Salary: $("#txtSalary").val()
             };
             $.post("/SPA/Main/SaveEmployee", postdata).then(
                 function (result) {
@@ -46,7 +46,7 @@
                     tr.append(nametd);
                     tr.append(salarytd);
                     $("#EmployeeTable").append(tr);
-                    $("#DivCreateEmployee").dialog("close");
+                    $("#DivCreateEmployee").dialog('close');
                 }
                 );
         }
